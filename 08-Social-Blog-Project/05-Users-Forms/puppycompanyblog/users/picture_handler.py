@@ -10,6 +10,7 @@ def add_profile_pic(pic_upload,username):
     # "mypicture.jpg"
     ext_type = filename.split('.')[-1]
     # "username.jpg"
+    # an alternative is to hash the username if security is a concern
     storage_filename = str(username)+'.'+ext_type
 
     filepath = os.path.join(current_app.root_path,'static\profile_pics',storage_filename)
