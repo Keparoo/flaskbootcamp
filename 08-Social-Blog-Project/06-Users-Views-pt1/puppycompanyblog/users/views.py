@@ -41,9 +41,11 @@ def login():
             login_user(user)
             flash('Log in Success!')
 
+            # If user was trying to access a different page requiring login, get that url so they can be redirected there
             next = request.args.get('next')
 
-            if next ==None or not next[0]=='/':
+            # True if not trying to go to another page so redirect home
+            if next == None or not next[0]=='/':
                 next = url_for('core.index')
 
             return redirect(next)
