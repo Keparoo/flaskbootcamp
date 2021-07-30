@@ -67,7 +67,7 @@ def update(blog_post_id):
 
 
 # DELETE
-@blog_post.route('/<int:blog_post_id/delete',methods=['GET','POST'])
+@blog_post.route('/<int:blog_post_id>/delete',methods=['GET','POST'])
 @login_required
 def delete_post(blog_post_id):
 
