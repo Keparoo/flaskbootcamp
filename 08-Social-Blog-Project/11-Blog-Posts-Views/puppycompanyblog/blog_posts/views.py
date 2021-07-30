@@ -1,5 +1,5 @@
 # blog_posts/views.py
-from flask import render_template,url_for,flash,request,redirect,Blueprint
+from flask import render_template,url_for,flash,request,redirect,Blueprint,abort
 from flask_login import current_user,login_required
 from puppycompanyblog import db
 from puppycompanyblog.models import BlogPost
@@ -59,7 +59,7 @@ def update(blog_post_id):
         flash('Blog Post Updated')
         return redirect(url_for('blog_posts.blog_post',blog_post_id=blog_post.id))
 
-    elif request.method = 'GET':
+    elif request.method == 'GET':
         form.title.data = blog_post.title
         form.text.data = blog_post.text
 
